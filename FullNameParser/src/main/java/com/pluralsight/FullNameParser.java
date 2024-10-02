@@ -5,7 +5,7 @@ public class FullNameParser {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String[] name = askForString("Please enter your name: ").split(" ");
+        String[] name = askForString("Please enter your name: ").split("\\s+");
 
         System.out.printf("""
                 First name:\s%s
