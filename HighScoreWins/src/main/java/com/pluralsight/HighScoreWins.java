@@ -6,12 +6,12 @@ public class HighScoreWins {
     public static void main(String[] args) {
         String[] gameScore = askForString("Please enter a game score: ").split("[:|]");
 
-        // Handles a tie by saying the winner is Tie!
+        // Handles a tie by saying Tie!
         String winner = (Integer.valueOf(gameScore[2]) == Integer.valueOf(gameScore[3]) ?
-                "Tie!" : (Integer.valueOf(gameScore[2]) > Integer.valueOf(gameScore[3]) ?
+                "Tie!" : "Winner: " + (Integer.valueOf(gameScore[2]) > Integer.valueOf(gameScore[3]) ?
                 gameScore[0] : gameScore[1]));
 
-        System.out.println("Winner: " + winner);
+        System.out.println(winner);
     }
     static String askForString(String question) {
         System.out.print(question);
