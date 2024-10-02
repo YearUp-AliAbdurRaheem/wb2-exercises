@@ -2,29 +2,23 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class FullNameApplication {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
         // First name here
-        System.out.print("Please enter your name\n" +
-                "First name: ");
-        String firstName = scanner.nextLine();
+        String firstName = askForString("Please enter your name\n" + "First name: ");
 
         // Middle name
-        System.out.print("Middle name: ");
-        String middleName = scanner.nextLine();
+        String middleName = askForString("Middle name: ");
 
         // Last name
-        System.out.print("Last name: ");
-        String lastName = scanner.nextLine();
+        String lastName = askForString("Last name: ");
 
         // Suffix
-        System.out.print("Suffix: ");
-        String suffix = scanner.nextLine();
+        String suffix = askForString("Suffix: ");
 
 
         // trim and output full name
-        firstName.trim(); middleName.trim(); lastName.trim(); suffix.trim();
 
         System.out.println("Full name: " +
                 firstName + ' ' +
@@ -32,5 +26,10 @@ public class FullNameApplication {
                 lastName +
                 (suffix.isBlank() ? "" : ", " + suffix));
 
+    }
+
+    static String askForString(String question) {
+        System.out.print(question);
+        return scanner.nextLine().trim();
     }
 }
