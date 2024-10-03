@@ -7,7 +7,7 @@ public class TheaterReservations {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         // Asking user for info
-        String[] name = askForString("Please enter your name: ").split("\\s");
+        String[] name = askForString("Please enter your name: ").split("\\s+");
         String date = askForString("What date will you be coming (MM/dd/yyyy): ");
         String ticketCount = askForString("How many tickets would you like? ");
         // Parsing Date
